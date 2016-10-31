@@ -47,11 +47,10 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 @Mod(modid = trumpmod.MODID, version = trumpmod.VERSION)
 public class trumpmod
-{
+{//by socky110
     public static final String MODID = "trumpmod";
     public static final String VERSION = "0.1";
-    
-    	//public static wheatcannon1 wheatcannon1;
+
         public static Item itemtrumpin;
     	public static Item trumphair2_1;
     	//public static Item hairtest;
@@ -73,19 +72,30 @@ public class trumpmod
     	
     	EntityRegistry.registerModEntity(trump.class, "trump", 0, MODID, 64, 5, true);
     	EntityRegistry.registerEgg(trump.class, 0, 1000);
-    	EntityRegistry.addSpawn(trump.class, 1, 1, 2, EnumCreatureType.AMBIENT, Biomes.field_76772_c);
-    	EntityRegistry.addSpawn(trump.class, 1, 1, 2, EnumCreatureType.AMBIENT, Biomes.field_180279_ad);
+    	EntityRegistry.addSpawn(trump.class, 1, 1, 2, EnumCreatureType.AMBIENT, Biomes.PLAINS);
+    	EntityRegistry.addSpawn(trump.class, 1, 1, 2, EnumCreatureType.AMBIENT, Biomes.TAIGA);
+        //add spawns for almost all biomes
     	
     	int id2 = 122;
     	EntityRegistry.registerModEntity(EntityV.class, "EntityVillager", id2, MODID, 64, 5, true);
     	EntityRegistry.registerEgg(EntityV.class, 0, 150);
-    	EntityRegistry.addSpawn(EntityV.class, 1, 0, 1, EnumCreatureType.AMBIENT, Biomes.field_76772_c);
-    	
+    	EntityRegistry.addSpawn(EntityV.class, 1, 0, 1, EnumCreatureType.AMBIENT, Biomes.PLAINS);
+    	EntityRegistry.addSpawn(EntityV.class, 1, 0, 1, EnumCreatureType.AMBIENT, Biomes.TAIGA);
+        //add spawns for almost all biomes
+        
     	int id = 121;
     	EntityRegistry.registerModEntity(trumpinator.class, "trumpinator", id, MODID, 64, 5, true);
     	EntityRegistry.registerEgg(trumpinator.class, 0, 500); 
-    	//EntityRegistry.addSpawn(trumpinator.class, 1, 1, 2, EnumCreatureType.AMBIENT, Biomes.PLAINS);
-    	 }
+    	//add spawns for almost all biomes
+
+        
+        int id = 123;
+    	EntityRegistry.registerModEntity(trumpinator2.class, "trumpinator2", id, MODID, 64, 5, true);
+    	EntityRegistry.registerEgg(trumpinator2.class, 0, 500); 
+        EntityRegistry.addSpawn(trumpinator2.class, 1, 1, 2, EnumCreatureType.AMBIENT, Biomes.PLAINS);
+        EntityRegistry.addSpawn(trumpinator2.class, 1, 1, 2, EnumCreatureType.AMBIENT, Biomes.TAIGA);
+    	        //add spawns for almost all biomes
+    }
     @EventHandler
     public void init(FMLInitializationEvent e)
     {
@@ -106,8 +116,6 @@ public class trumpmod
     			//return new ResourceLocation("trumpmod", "textures/entity/trumpinator.PNG"); 
     			
     		//}});
-    	//EntityRegistry.registerModEntity(trump.class, "trump", 0, MODID, 15, 5, true);
-    	//EntityRegistry.registerEgg(trump.class, 0, 1000);
     	GameRegistry.registerItem(trumphair2_1 = new trumphar("trumphair", HAIR, 0, EntityEquipmentSlot.HEAD), "trumphair");
     	//GameRegistry.registerItem(hairtest = new hairtest("trumphair2", HAIR, 0, EntityEquip mentSlot.HEAD), "trumphair2");
     	GameRegistry.registerItem(money = new money(4, 1, false), "money");
@@ -137,13 +145,10 @@ public class trumpmod
     	Minecraft.func_71410_x().func_175599_af().func_175037_a().func_178086_a(spring, 0, new ModelResourceLocation(MODID + ":" + spring.func_77658_a().substring(5), "inventory"));
     	Minecraft.func_71410_x().func_175599_af().func_175037_a().func_178086_a(thepoll, 0, new ModelResourceLocation(MODID + ":" + thepoll.func_77658_a().substring(5), "inventory"));
     	
-    	//MinecraftForge.EVENT_BUS.register(new haircolor(new rendercolor(Minecraft.getMinecraft().getRenderManager(), new ModelBiped(), 1.0F)));
     	MinecraftForge.EVENT_BUS.register(new MobDropsHandler());
     	proxy.registerItemColorHandler(trumphair2_1);
     	//ItemColors.registerItemColorHandler(IItemColor.getColorFromItemstack(new ItemStack(trumphair2_1), 2), null); 
     	//Minecraft.getMinecraft().getItemColors().registerItemColorHandler(new IItemColor(), trumphair2_1);
-    	//RenderingRegistry.registerEntityRenderingHandler(entityw.class, new rendersnow(new RenderManager(null, null), 0.0F));
-    	//GameRegistry.registerItem(stuff2.cage1(null), "cage1");
         //System.out.println("DIRT BLOCK >> "+Blocks.DIRT.getUnlocalizedName());
     }
 }
