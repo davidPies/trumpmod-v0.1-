@@ -2,7 +2,13 @@
 //http://www.w3schools.com/colors/colors_picker.asp
 
  ItemColors.getColorFromItemStack(new ItemStack(trumphar), 0xffff80);
+ FMLClientHandler.instance().getClient().getItemColors().registerItemColorHandler(<IItemColor>)
+ ^
+YES
 
+
+NOT
+ V
  @SideOnly(Side.CLIENT)
 	public int getColorFromItemStack(ItemStack par1ItemStack, int par2)
 	{
