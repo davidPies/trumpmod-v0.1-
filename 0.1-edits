@@ -1,0 +1,10 @@
+//http://www.minecraftforge.net/forum/index.php?topic=9300.0
+
+
+ Item.getColorFromItemStack(new ItemStack(trumphar), 0xffff80);
+
+ @SideOnly(Side.CLIENT)
+	public int getColorFromItemStack(ItemStack par1ItemStack, int par2)
+	{
+		return super.getColorFromItemStack();
+	}
