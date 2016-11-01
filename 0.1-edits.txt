@@ -6,5 +6,5 @@
  @SideOnly(Side.CLIENT)
 	public int getColorFromItemStack(ItemStack par1ItemStack, int par2)
 	{
-		return super.getColorFromItemStack(par1ItemStack, par2);
+		return 0xffff80;
 	}
