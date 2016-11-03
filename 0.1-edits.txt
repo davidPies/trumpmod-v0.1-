@@ -14,13 +14,3 @@ NOT
 	{
 		return 0xffff80;
 	}
-
-public void entityDamageEntity(EntityDamageByEntityEvent e){
-	Entity p = e.getEntity();
-	PlayerInventory i = ((EntityPlayer) p).getInventory();
-	for(ItemStack ac : i.getArmorContents()){
-		if(diaArmour(ac)){
-		ac.setDurability((short) 0);
-			}
-	}
-}
