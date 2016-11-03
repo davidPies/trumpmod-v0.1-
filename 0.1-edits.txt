@@ -4,6 +4,12 @@
  ItemColors.getColorFromItemStack(new ItemStack(trumphar), 0xffff80);
 public static ArmorMaterial HAIR = EnumHelper.addArmorMaterial("trumphair", "trumpmod:trumphair", -1, new int[]{2, 0, 0, 2}, 15, SoundEvents.field_187550_ag, 0.0F);
 
+
+----have to:
++++have separate colored items
++++have rainbow wig
++++make another mod
+
  
  FMLClientHandler.instance().getClient().getItemColors().registerItemColorHandler(<IItemColor>)
  ^
